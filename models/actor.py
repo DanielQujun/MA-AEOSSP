@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from networks.utils import Encoder_Embedding
+from models.utils import Encoder_Embedding
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 

@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
-from networks.utils import Encoder_Embedding
+from models.utils import Encoder_Embedding
 
 
 class StateCritic(nn.Module):
