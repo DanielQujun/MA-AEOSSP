@@ -22,7 +22,7 @@ def hard_update(target, source):
 
 
 class MADDPG:
-    def __init__(self, n_agents, dim_obs, batch_size, capacity=1000):
+    def __init__(self, n_agents, batch_size, capacity=1000):
         self.actors = [DRL4SSP(agent_id=i) for i in range(n_agents)]
         self.critics = [StateCritic() for i in range(n_agents)]
 
@@ -31,7 +31,6 @@ class MADDPG:
         # self.critics_target = deepcopy(self.critics)
 
         self.n_agents = n_agents
-        self.n_states = dim_obs
         self.memory = ReplayMemory(capacity)
         self.batch_size = batch_size
         self.use_cuda = th.cuda.is_available()

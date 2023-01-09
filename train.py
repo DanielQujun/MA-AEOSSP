@@ -5,13 +5,9 @@ import torch
 
 np.random.seed(1234)
 torch.manual_seed(1234)
-n_states = 213
-n_actions = 2
-capacity = 1000000
 
 n_episode = 20000
 max_steps = 1000
-episodes_before_train = 100
 
 win = None
 param = None
@@ -30,7 +26,7 @@ config = {
 }
 
 env = SatelliteENV(config)
-maddpg = MADDPG(agent_num, n_states, batch_size)
+maddpg = MADDPG(agent_num, batch_size)
 
 FloatTensor = torch.cuda.FloatTensor if maddpg.use_cuda else torch.FloatTensor
 x0 = torch.zeros((1, STATIC_SIZE, 1), requires_grad=True)
